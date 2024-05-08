@@ -1,5 +1,7 @@
 import { Box, Container, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from '@chakra-ui/react'
 import React from 'react'
+import Login from '../componenets/Login'
+import SignUp from '../componenets/SignUp'
 
 function Home() {
   return <Container maxW ="xl" centerContent>
@@ -14,10 +16,10 @@ function Home() {
   </TabList>
   <TabPanels>
     <TabPanel>
-      <p>one!</p>
+      <Login />
     </TabPanel>
     <TabPanel>
-      <p>two!</p>
+      <SignUp />
     </TabPanel>
   </TabPanels>
 </Tabs>

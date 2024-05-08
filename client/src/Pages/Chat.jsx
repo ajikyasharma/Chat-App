@@ -16,7 +16,7 @@ function Chat() {
      }
 
      useEffect(()=>{
-          fetchData()
+          // fetchData()
      },[])
 
   return (
