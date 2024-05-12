@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 import cors from 'cors'
 import connectDB from './db/index.js';
 import userRoutes from './routes/userRoutes.js'
+import chatRoutes from './routes/chatRoutes.js'
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
+
 
 const app = express();
 app.use(cors())
@@ -34,6 +36,7 @@ app.get('/', (req,res)=>{
 
 //user Routes
 app.use('/api/user', userRoutes)
+app.use('/api/chat', chatRoutes)
 
 //router for url which doesn't exist
 app.use(notFound);
