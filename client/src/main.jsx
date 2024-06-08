@@ -6,14 +6,15 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import { ChakraProvider } from '@chakra-ui/react'
 import Home from './Pages/Home.jsx'
 import Chat from './Pages/Chat.jsx'
+import ChatProvider from './Context/ChatProvider.jsx'
 
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={ <App />}>
-        <Route path='/' element={<Home />}/>
-        <Route path='/chat' element={<Chat />} />
+    <Route path='/' element={<App />}>
+      <Route path='/' element={<Home />} />
+      <Route path='/chat' element={<Chat />} />
 
     </Route>
   )
@@ -21,7 +22,9 @@ const router = createBrowserRouter(
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ChakraProvider>
-    <RouterProvider router={router}/>
-  </ChakraProvider>,
+  <ChatProvider>
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+  </ChatProvider>,
 )

@@ -42,6 +42,7 @@ function Login() {
             
             const { data }  = axios.post('http://localhost:8000/api/user/login',{ email, password}, config)
             .then((res)=>{
+              localStorage.setItem('userInfo', JSON.stringify(res.data));
                 toast({
                     title:"Login Successful",
                     status:"success",
@@ -50,7 +51,7 @@ function Login() {
                     position:'bottom',
                 });
 
-                localStorage.setItem('userInfo', JSON.stringify(data));
+              
                 setLoading(false);
                 navigate('/chat')
             })

@@ -1,31 +1,18 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react';
+import SideDrawer from '../componenets/SideDrawer';
+import MyChats from '../componenets/MyChats';
+import ChatBox from '../componenets/ChatBox';
 
 function Chat() {
 
-    const [chats, setChats] = useState([])
-
-     const fetchData = async()=>{
-        const response= await axios.get('http://localhost:8000/api/chats');
-
-        console.log(response.data)
-        setChats(response.data)
-
-
-     }
-
-     useEffect(()=>{
-          // fetchData()
-     },[])
+  
 
   return (
-    <div>
-        Chats 
+    <div >
+           Chat
 
-        {chats.map((chat,idx)=>(
-            <h1 key={idx}>{chat.chatName}</h1>
-        ))}
     </div>
   )
 }
